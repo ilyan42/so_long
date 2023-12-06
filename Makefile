@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+         #
+#    By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/06 17:49:42 by ilbendib          #+#    #+#              #
-#    Updated: 2023/12/06 17:53:36 by ilbendib         ###   ########.fr        #
+#    Updated: 2023/12/06 18:17:05 by ilyanbendib      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,11 @@ HEADERS_DIR = .
 
 HEADERS = $(_HEADERS:%=$(HEADERS_DIR)/%)
 
-CC = cc
+CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror minilibx-linux/libmlx.a -Imlx_linux -lXext -lX11 -lm -lz
+CFLAGS = -Wall -Wextra -Werror
+
+LDFLAGS = -Lminilibx-linux -lmlx -lXext -lX11 -lm -lz
 
 AR = ar
 
@@ -32,15 +34,15 @@ ARFLAGS = rcs
 
 OBJS = $(SRCS:.c=.o)
 
-NAME = so_long.a
+NAME = so_long
 
 all: $(NAME)
 
 %.o: %.c $(HEADERS)
-	$(CC) $(CFLAGS) -I $(HEADERS_DIR) -c $< -o $@
+	$(CC) $(CFLAGS) -I$(HEADERS_DIR) -c $< -o $@
 
 $(NAME): $(OBJS)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
+	$(CC) $(OBJS) $(LDFLAGS) -o $(NAME)
 
 clean:
 	rm -f $(OBJS)
@@ -48,6 +50,6 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 
-re: fclean $(NAME)
+re: fclean all
 
-.PHONY: all clean fclean re 
+.PHONY: all clean fclean re
