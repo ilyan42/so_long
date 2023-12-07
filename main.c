@@ -6,7 +6,7 @@
 /*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 17:48:40 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/07 17:20:02 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2023/12/07 17:38:25 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,16 +94,19 @@ int main(void)
     mlx = mlx_init();
     win = mlx_new_window(mlx, 800, 600, "Example");
     mlx_hook(win, KEY_PRESS, KEY_PRESS_MASK, handle_key_press, NULL);
+	
 	ground_img = mlx_xpm_file_to_image(mlx, "img/ground.xpm", &size, &size);
 	character_img = mlx_xpm_file_to_image(mlx, "img/character.xpm", &size, &size);
 	Wall_img = mlx_xpm_file_to_image(mlx, "img/Wall.xpm", &size, &size);
 	Collectibles_img = mlx_xpm_file_to_image(mlx, "img/Colectibles.xpm", &size, &size);
 	exit_img = mlx_xpm_file_to_image(mlx, "img/exit.xpm", &size, &size);
+	
 	mlx_put_image_to_window(mlx, win, character_img, 250, 250);
 	mlx_put_image_to_window(mlx, win, Collectibles_img, 150, 150);
 	mlx_put_image_to_window(mlx, win, exit_img, 500, 500);
 	mlx_put_image_to_window(mlx, win, Wall_img, 350, 350);
 	mlx_put_image_to_window(mlx, win, ground_img, 0, 0);
     mlx_loop(mlx);
+	
     return 0;
 }
