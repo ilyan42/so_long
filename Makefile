@@ -6,7 +6,7 @@
 #    By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/06 17:49:42 by ilbendib          #+#    #+#              #
-#    Updated: 2023/12/06 18:17:05 by ilyanbendib      ###   ########.fr        #
+#    Updated: 2023/12/07 10:52:24 by ilyanbendib      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-LDFLAGS = -Lminilibx-linux -lmlx -lXext -lX11 -lm -lz
+#LDFLAGS = -Lminilibx-linux -lmlx -lXext -lX11 -lm -lz
+LDFLAGS = -Lmlx -lmlx -Imlx -framework OpenGL -framework AppKit
 
 AR = ar
 
