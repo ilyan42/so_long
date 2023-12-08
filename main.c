@@ -6,32 +6,12 @@
 /*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 17:48:40 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/07 18:48:58 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2023/12/08 11:00:58 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minilibx-linux/mlx.h"
-#include <stdio.h>
-#include <stdlib.h>
-
-typedef		struct s_game
-{
-	void *mlx;
-    void *win;
-	void	*ground_img;
-	void	*character_img;
-	void	*Wall_img;
-	void	*Collectibles_img;
-	void	*exit_img;
-	int		character_x;
-	int		character_y;
-}	t_game;
-
-#define KEY_PRESS 2
-#define KEY_RELEASE 3
-#define KEY_PRESS_MASK (1L<<0)
-#define ESCAPE_KEY 53
-#define TITLE_SIZE 48
+#include "so_long.h"
 
 void draw_character(t_game *game)
 {
@@ -49,6 +29,7 @@ int handle_key_press(int keycode, void *param)
     }
     else if (keycode == 0)
     {
+		game->orientation = 0;
 		game->character_x -= TITLE_SIZE;
         draw_character(game);
     }
