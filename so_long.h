@@ -6,7 +6,7 @@
 /*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:49:36 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/08 10:55:13 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2023/12/09 17:55:05 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "minilibx-linux/mlx.h"
 
 typedef		struct s_game
 {
@@ -27,14 +28,24 @@ typedef		struct s_game
 	void	*exit_img;
 	int		character_x;
 	int		character_y;
-	int		orientation;
+	char	**map;
 }	t_game;
 
+// typedef		struct m_map
+// {
+// 	char	**map;
+// }	t_map;
 
 #define KEY_PRESS 2
 #define KEY_RELEASE 3
 #define KEY_PRESS_MASK (1L<<0)
 #define ESCAPE_KEY 53
 #define TITLE_SIZE 48
+#define SIZE 48
+
+int ft_handle_key_press(int keycode, void *param);
+void ft_draw_character(t_game *game);
+void	ft_map_init(t_game *game);
+void	ft_print_map(t_game *game);
 
 #endif
