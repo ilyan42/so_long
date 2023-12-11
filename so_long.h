@@ -6,7 +6,7 @@
 /*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:49:36 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/09 17:55:05 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2023/12/11 13:52:54 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,9 @@ int ft_handle_key_press(int keycode, void *param);
 void ft_draw_character(t_game *game);
 void	ft_map_init(t_game *game);
 void	ft_print_map(t_game *game);
+void	ft_print_map(t_game *game);
+void ft_new_position(int x, int y, t_game *game);
+void ft_init_map(t_game *game, int car_pos);
+void ft_game_init(t_game *game);
 
 #endif

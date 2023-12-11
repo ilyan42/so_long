@@ -6,12 +6,12 @@
 #    By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/06 17:49:42 by ilbendib          #+#    #+#              #
-#    Updated: 2023/12/09 19:01:31 by ilyanbendib      ###   ########.fr        #
+#    Updated: 2023/12/11 14:30:25 by ilyanbendib      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-_SRCS = main.c $Sgame/ft_map_init.c\
-				$Sgame/ft_handle_key_press.c\
+_SRCS = main.c game/ft_map_init.c\
+				game/ft_handle_key_press.c\
 
 SRC_DIR = .
 
