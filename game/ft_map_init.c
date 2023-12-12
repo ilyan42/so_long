@@ -6,7 +6,7 @@
 /*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 17:39:28 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2023/12/11 17:40:40 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2023/12/11 22:01:00 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,4 +145,14 @@ void ft_print_map(t_game *game)
 		}
 		y++;
 	}
+}
+
+void	ft_parsing_map(t_game *game)
+{
+	int fd;
+
+	fd = open("../map/map1.ber", O_RDONLY);
+	game->map = get_next_line(fd);
+	
+	
 }
