@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_map_init.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 17:39:28 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2023/12/12 10:56:01 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2023/12/12 11:30:27 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,7 +150,20 @@ void ft_print_map(t_game *game)
 void	ft_parsing_map(t_game *game)
 {
 	int fd;
-
+	int x;
+	int y;
+	
 	fd = open("../map/map1.ber", O_RDONLY);
 	game->map = get_next_line(fd);
+	y = 0;
+	while(game->map[y])
+	{
+		x = 0;
+		while(game->map[y][x])
+		{
+			game->map[y][x] = get_next_line(fd);
+			x++;
+		}
+		y++;
+	}
 }
