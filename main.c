@@ -6,20 +6,24 @@
 /*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 17:48:40 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/11 18:08:56 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2023/12/12 19:32:13 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include <stdio.h>
 
 int main(void)
 {
 	t_game game;
 
+	ft_parsing_map(&game);
 	ft_game_init(&game);
-	// ft_init_map(&game, 1);
+	ft_init_map(&game, 1);
 	ft_draw_character(&game);
-	//mlx_hook(game.mlx, 2, 1L << 0, ft_handle_key_press, (void *)&game);
-	mlx_loop(game.win);
+	mlx_loop_hook(game.mlx, ft_update, (void *)&game);
+	//mlx_hook(game.win, 2, KEY_PRESS_MASK, ft_handle_key_press, &game);
+	//mlx_key_hook(game.win, ft_handle_key_press, (void *)&game);
+	mlx_loop(&game.mlx);
 	return 0;
 }

@@ -6,11 +6,11 @@
 #    By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/06 17:49:42 by ilbendib          #+#    #+#              #
-#    Updated: 2023/12/11 14:30:25 by ilyanbendib      ###   ########.fr        #
+#    Updated: 2023/12/12 13:59:01 by ilyanbendib      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-_SRCS = main.c game/ft_map_init.c\
+_SRCS = 		main.c game/ft_map_init.c\
 				game/ft_handle_key_press.c\
 
 SRC_DIR = .
@@ -31,7 +31,9 @@ UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Linux)
 	LDFLAGS = -Lminilibx-linux -lmlx -lXext -lX11 -lm -lz
 else ifeq ($(UNAME_S),Darwin)
-	LDFLAGS = -Lmlx -lmlx -Imlx -framework OpenGL -framework AppKit
+	#LDFLAGS = -Lmlx -lmlx -Imlx -framework OpenGL -framework AppKit
+	LDFLAGS = -Lmlx -lmlx -Imlx -L./LIBFT -lft -framework OpenGL -framework AppKit
+
 else
 	$(error Unsupported operating system: $(UNAME_S))
 endif
@@ -50,7 +52,8 @@ all: $(NAME)
 	$(CC) $(CFLAGS) -I$(HEADERS_DIR) -c $< -o $@
 
 $(NAME): $(OBJS)
-	$(CC) $(OBJS) $(LDFLAGS) -o $(NAME)
+	$(MAKE) all -C ./LIBFT
+	$(CC) $(OBJS) $(LDFLAGS) -o $(NAME) 
 
 clean:
 	rm -f $(OBJS)
