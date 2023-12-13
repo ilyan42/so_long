@@ -6,7 +6,7 @@
 #    By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/29 20:32:47 by ilbendib          #+#    #+#              #
-#    Updated: 2023/12/12 14:25:50 by ilyanbendib      ###   ########.fr        #
+#    Updated: 2023/12/13 13:11:19 by ilyanbendib      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -98,16 +98,7 @@ clean:
 	rm -f $(OBJS) $(GET_NEXT_LINE_OBJS)
 
 fclean: clean 
-	rm -f $(NAME).
-
-# bonus : $(OBJS) $(BONUS_OBJS)
-# 	$(AR) $(ARFLAGS) $(NAME) $(OBJS) $(BONUS_OBJS)
-
-# printf : $(OBJS) $(PRINTF_OBJS)
-# 	$(AR) $(ARFLAGS) $(NAME) $(OBJS) $(PRINTF_OBJS)
-
-# get_next_line : $(OBJS) $(GET_NEXT_LINE_OBJS)
-# 	$(AR) $(ARFLAGS) $(NAME) $(OBJS) $(GET_NEXT_LINE_OBJS)
+	rm -f $(NAME)
 
 re: fclean $(NAME)
 
