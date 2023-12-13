@@ -6,7 +6,7 @@
 /*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 16:27:08 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2023/12/09 19:00:38 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2023/12/13 14:09:25 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,22 +28,22 @@ int ft_handle_key_press(int keycode, void *param)
 	}
 	else if (keycode == 0)
 	{
-		game->character_x -= TITLE_SIZE;
+		game->character_x -= SIZE;
 		ft_draw_character(game);
 	}
 	else if (keycode == 13)
 	{
-		game->character_y -= TITLE_SIZE;
+		game->character_y -= SIZE;
 		ft_draw_character(game);
 	}
 	else if (keycode == 2)
 	{
-		game->character_x += TITLE_SIZE;
+		game->character_x += SIZE;
 		ft_draw_character(game);
 	}
 	else if (keycode == 1)
 	{
-		game->character_y += TITLE_SIZE;
+		game->character_y += SIZE;
 		ft_draw_character(game);
 	}
 	return 0;
