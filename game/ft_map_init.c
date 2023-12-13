@@ -6,7 +6,7 @@
 /*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 17:39:28 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2023/12/13 12:02:02 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2023/12/13 13:21:15 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void ft_game_init(t_game *game)
 
     size = SIZE;
     game->mlx = mlx_init();
-    game->win = mlx_new_window(game->mlx, 1000, 800, "crime buster");
+    game->win = mlx_new_window(game->mlx, 2000, 1500, "crime buster");
     game->Collectibles_img = mlx_xpm_file_to_image(game->mlx, "./img/Colectibles.xpm", &size, &size);
     game->character_img = mlx_xpm_file_to_image(game->mlx, "./img/Character.xpm", &size, &size);
     game->exit_img = mlx_xpm_file_to_image(game->mlx, "./img/exit.xpm", &size, &size);
@@ -72,7 +72,7 @@ void ft_game_init(t_game *game)
 
 
 
-void ft_init_map(t_game *game, int car_pos)
+void ft_init_map(t_game *game)
 {
 	int x;
 	int y;
@@ -86,8 +86,8 @@ void ft_init_map(t_game *game, int car_pos)
 		x = -1;
 		while(game->map[y][++x])
 		{
-			if(car_pos && game->map[y][x] == 'P')
-				ft_new_position(x, y, game);
+			// if(car_pos && game->map[y][x] == 'P')
+			// 	ft_new_position(x, y, game);
 			if (game->map[y][x] == '1')
 				mlx_put_image_to_window(game->mlx, game->win, game->Wall_img, x * size, y * size);
 			if (game->map[y][x] == 'P')
@@ -145,7 +145,7 @@ void ft_parsing_map(t_game *game)
 
 int ft_update(t_game *game)
 {
-	ft_init_map(game, 1);
+	ft_init_map(game);
 	ft_draw_character(game);
 	return (0);
 }
