@@ -6,7 +6,7 @@
 /*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 17:39:28 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2023/12/12 19:36:19 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2023/12/13 12:02:02 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,20 +41,36 @@
 // 	// mlx_loop(game->mlx);
 // }
 
+// void ft_game_init(t_game *game)
+// {
+// 	int size;
+
+// 	size = SIZE;
+// 	game = malloc(sizeof(t_game));
+// 	game->mlx = mlx_init();
+// 	game->win = mlx_new_window(game->mlx, 800, 600, "crime buster");
+// 	game->Collectibles_img = mlx_xpm_file_to_image(game->mlx, "./img/Colectibles.xpm", &size , &size);
+// 	game->character_img = mlx_xpm_file_to_image(game->mlx, "./img/Charactere.xpm", &size, &size);
+// 	game->exit_img = mlx_xpm_file_to_image(game->mlx, "./img/exit.xpm", &size, &size);
+// 	game->Wall_img = mlx_xpm_file_to_image(game->mlx, "./img/Wall.xpm", &size, &size);
+// 	game->ground_img = mlx_xpm_file_to_image(game->mlx, "./img/ground.xpm", &size, &size);
+// }
+
 void ft_game_init(t_game *game)
 {
-	int size;
+    int size;
 
-	size = SIZE;
-	game = malloc(sizeof(t_game));
-	game->mlx = mlx_init();
-	game->win = mlx_new_window(game->mlx, 800, 600, "crime buster");
-	game->Collectibles_img = mlx_xpm_file_to_image(game->mlx, "./img/Colectibles.xpm", &size , &size);
-	game->character_img = mlx_xpm_file_to_image(game->mlx, "./img/Charactere.xpm", &size, &size);
-	game->exit_img = mlx_xpm_file_to_image(game->mlx, "./img/exit.xpm", &size, &size);
-	game->Wall_img = mlx_xpm_file_to_image(game->mlx, "./img/Wall.xpm", &size, &size);
-	game->ground_img = mlx_xpm_file_to_image(game->mlx, "./img/ground.xpm", &size, &size);
+    size = SIZE;
+    game->mlx = mlx_init();
+    game->win = mlx_new_window(game->mlx, 1000, 800, "crime buster");
+    game->Collectibles_img = mlx_xpm_file_to_image(game->mlx, "./img/Colectibles.xpm", &size, &size);
+    game->character_img = mlx_xpm_file_to_image(game->mlx, "./img/Character.xpm", &size, &size);
+    game->exit_img = mlx_xpm_file_to_image(game->mlx, "./img/exit.xpm", &size, &size);
+    game->Wall_img = mlx_xpm_file_to_image(game->mlx, "./img/Wall.xpm", &size, &size);
+    game->ground_img = mlx_xpm_file_to_image(game->mlx, "./img/ground.xpm", &size, &size);
 }
+
+
 
 void ft_init_map(t_game *game, int car_pos)
 {
@@ -98,33 +114,33 @@ void ft_new_position(int x, int y, t_game *game)
 
 void ft_parsing_map(t_game *game)
 {
-    int fd;
-    int map_height = 0;
-    char *tmp;
+	int fd;
+	int map_height = 0;
+	char *tmp;
 
-    fd = open("./map/map1.ber", O_RDONLY);
-    tmp = get_next_line(fd);
-    while (tmp)
-    {
-        map_height++;
-        free(tmp);
-        tmp = get_next_line(fd);
-    }
-    close(fd);
+	fd = open("./map/map2.ber", O_RDONLY);
+	tmp = get_next_line(fd);
+	while (tmp)
+	{
+		map_height++;
+		free(tmp);
+		tmp = get_next_line(fd);
+	}
+	close(fd);
 
-    fd = open("./map/map1.ber", O_RDONLY);
-    tmp = get_next_line(fd);
-    game->map = malloc(sizeof(char*) * (map_height + 1));
+	fd = open("./map/map2.ber", O_RDONLY);
+	tmp = get_next_line(fd);
+	game->map = malloc(sizeof(char*) * (map_height + 1));
 
-    int i = 0;
-    while (tmp && i < map_height)
-    {
-        game->map[i] = tmp;
-        tmp = get_next_line(fd);
-        i++;
-    }
-    game->map[i] = NULL;
-    close(fd);
+	int i = 0;
+	while (tmp && i < map_height)
+	{
+		game->map[i] = tmp;
+		tmp = get_next_line(fd);
+		i++;
+	}
+	game->map[i] = NULL;
+	close(fd);
 }
 
 int ft_update(t_game *game)
