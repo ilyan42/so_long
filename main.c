@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 17:48:40 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/13 18:50:00 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2023/12/14 12:57:38 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ int main(void)
 	mlx_loop_hook(game.mlx, ft_update, (void *)&game);
 	mlx_hook(game.win, 2, KEY_PRESS_MASK, ft_handle_key_press, &game);
 	//mlx_key_hook(game.win, ft_handle_key_press, (void *)&game);
-	mlx_loop(&game.mlx);
+	mlx_loop(game.mlx);
 	return 0;
 }
