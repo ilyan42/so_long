@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init_map.c                                      :+:      :+:    :+:   */
+/*   ft_map_init.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 17:39:28 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2023/12/14 14:26:04 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/14 15:43:29 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,27 +51,10 @@ void ft_init_map(t_game *game)
 			if (game->map[y][x] == '0')
 				mlx_put_image_to_window(game->mlx, game->win, game->ground_img, x * img_size, y * img_size);
 			if (game->map[y][x] == 'C')
-				mlx_put_image_to_window(game->mlx, game->win, game->Collectibles_img, x * img_size, y * img_size);
+				mlx_put_image_to_window(game->mlx, game->win, game->Collectibles_img, x * img_size, y * img_size + 11);
 			if (game->map[y][x] == 'E')
-				mlx_put_image_to_window(game->mlx, game->win, game->exit_img, x * img_size, y * img_size);
+				mlx_put_image_to_window(game->mlx, game->win, game->exit_img, x * img_size, y * img_size + 11);
 		}
-	}
-}
-
-void size_map(t_game *game)
-{
-	int x;
-	int y;
-
-	y = -1;
-	while(game->map[++y])
-	{
-		x = -1;
-		while(game->map[y][++x])
-		{
-			game->size_x = x;
-		}
-		game->size_y = y;
 	}
 }
 
@@ -79,38 +62,6 @@ void ft_new_position(int x, int y, t_game *game)
 {
 	game->character_x = x;
 	game->character_y = y;
-}
-
-
-void ft_parsing_map(t_game *game)
-{
-	int fd;
-	char *tmp;
-	game->map_height = 0;
-	
-	fd = open("./map/map2.ber", O_RDONLY);
-	tmp = get_next_line(fd);
-	while (tmp)
-	{
-		game->map_height++;
-		free(tmp);
-		tmp = get_next_line(fd);
-	}
-	close(fd);
-
-	fd = open("./map/map2.ber", O_RDONLY);
-	tmp = get_next_line(fd);
-	game->map = malloc(sizeof(char*) * (game->map_height + 1));
-
-	int i = 0;
-	while (tmp && i < game->map_height)
-	{
-		game->map[i] = tmp;
-		tmp = get_next_line(fd);
-		i++;
-	}
-	game->map[i] = NULL;
-	close(fd);
 }
 
 int ft_update(t_game *game)
