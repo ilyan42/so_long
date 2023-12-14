@@ -6,7 +6,7 @@
 /*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 17:39:28 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2023/12/13 20:40:24 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2023/12/13 21:01:11 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ void ft_game_init(t_game *game)
 	game->height = game->size_x;
 	game->width = game->size_y;
     game->mlx = mlx_init();
-    game->win = mlx_new_window(game->mlx, 2000, 1500, "crime buster");
+    game->win = mlx_new_window(game->mlx, game->height * img_size, game->width * img_size, "crime buster");
     game->Collectibles_img = mlx_xpm_file_to_image(game->mlx, "./img/colectibles_pac.xpm", &img_size, &img_size);
     game->character_img = mlx_xpm_file_to_image(game->mlx, "./img/pacmanv2.xpm", &img_size, &img_size);
     game->exit_img = mlx_xpm_file_to_image(game->mlx, "./img/exit.xpm", &img_size, &img_size);
-    game->Wall_img = mlx_xpm_file_to_image(game->mlx, "./img/Wall_pac.xpm", &img_size, &img_size);
+    game->Wall_img = mlx_xpm_file_to_image(game->mlx, "./img/Wall_pacv2.xpm", &img_size, &img_size);
     game->ground_img = mlx_xpm_file_to_image(game->mlx, "./img/ground_pac.xpm", &img_size, &img_size);
 }
 
