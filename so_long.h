@@ -6,7 +6,7 @@
 /*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:49:36 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/14 16:55:50 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2023/12/15 11:39:29 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,6 @@ void ft_game_init(t_game *game);
 void	ft_parsing_map(t_game *game);
 int	ft_update(t_game *game);
 void size_map(t_game *game);
+int		move_is_good(t_game *game, int x, int y);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_move.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 15:53:09 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/14 15:55:08 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/15 11:36:55 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,13 @@
 
 void	ft_move_left(t_game *game)
 {
-	
+	int x;
+	int y;
+
+	x = game->Pacman_x;
+	y = game->Pacman_y;
+	if (move_is_good(game, x - 1, y))
+	{
+		
+	}
 }
