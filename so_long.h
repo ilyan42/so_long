@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:49:36 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/14 13:02:49 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/14 16:55:50 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,20 @@ typedef		struct s_game
 {
 	void *mlx;
 	void *win;
-	void	*ground_img;
-	void	*character_img;
-	void	*Wall_img;
-	void	*Collectibles_img;
-	void	*exit_img;
-	int		character_x;
-	int		character_y;
+	void	*Pacman_gnd;
+	void	*Pacman;
+	void	*Pacman_wall;
+	void	*Pacman_colec;
+	void	*Pacman_exit;
+	int		Pacman_x;
+	int		Pacman_y;
 	char	**map;
 	int		map_height;
 	int		size_x;
 	int		size_y;
 	int		height;
 	int		width;
+	void	*nbr_move;
 }	t_game;
 
 #define KEY_PRESS 2
