@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+         #
+#    By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/29 20:32:47 by ilbendib          #+#    #+#              #
-#    Updated: 2023/12/13 13:11:19 by ilyanbendib      ###   ########.fr        #
+#    Updated: 2023/12/15 15:36:08 by ilbendib         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,7 +74,7 @@ HEADERS_DIR = .
 
 HEADERS = $(_HEADERS:%=$(HEADERS_DIR)/%)
 
-CC = cc
+CC = gcc
 
 CFLAGS = -g3 -Wall -Wextra -Werror
 
