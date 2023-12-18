@@ -9,6 +9,21 @@
 		"string_view": "c",
 		"unordered_map": "c",
 		"vector": "c",
-		"so_long.h": "c"
+		"so_long.h": "c",
+		"__config": "c",
+		"__node_handle": "c",
+		"bit": "c",
+		"chrono": "c",
+		"cmath": "c",
+		"complex": "c",
+		"functional": "c",
+		"istream": "c",
+		"iterator": "c",
+		"memory": "c",
+		"mutex": "c",
+		"ostream": "c",
+		"sstream": "c",
+		"tuple": "c",
+		"utility": "c"
 	}
 }

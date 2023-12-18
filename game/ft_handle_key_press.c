@@ -6,7 +6,7 @@
 /*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 16:27:08 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2023/12/14 16:50:45 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2023/12/17 14:31:36 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void ft_draw_character(t_game *game)
 {
-	mlx_put_image_to_window(game->mlx, game->win, game->Pacman, game->Pacman_x, game->Pacman_y);
+	mlx_put_image_to_window(game->mlx, game->win, game->Pacman, game->Pacman->x * SIZE, game->Pacman->y * SIZE);
 }
 
 int ft_handle_key_press(int keycode, void *param)
 {
     t_game *game = (t_game *)param;
 
-    if (keycode == ESCAPE_KEY)
+    if (keycode == ESCAPE_KEY || keycode == 53)
     {
         printf("Programme terminé.\n");
         exit(0);
@@ -30,27 +30,22 @@ int ft_handle_key_press(int keycode, void *param)
     {
         printf("Touche appuyée : %d\n", keycode);
 
-        if (keycode == 97)
+        if (keycode == 13)
         {
-            game->Pacman_x -= SIZE;
-			ft_draw_character(game);
+			ft_move_up(game);
         }
-        else if (keycode == 115)
+        else if (keycode == 1)
         {
-            game->Pacman_y -= SIZE;
-			ft_draw_character(game);
+			ft_move_down(game);
         }
-        else if (keycode == 110)
+        else if (keycode == 0)
         {
-            game->Pacman_x += SIZE;
-			ft_draw_character(game);
+            ft_move_left(game);
         }
-        else if (keycode == 119)
+        else if (keycode == 2)
         {
-            game->Pacman_y += SIZE;
-			ft_draw_character(game);
+            ft_move_right(game);
         }
-        
     }
     return 0;
 }

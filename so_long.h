@@ -6,7 +6,7 @@
 /*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:49:36 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/15 11:39:29 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2023/12/17 15:52:45 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,22 @@
 #include <fcntl.h>
 #include "LIBFT/libft.h"
 
+
+typedef		struct s_pos
+{
+	int x;
+	int y;
+}		t_pos;
+
 typedef		struct s_game
 {
 	void *mlx;
 	void *win;
 	void	*Pacman_gnd;
-	void	*Pacman;
+	t_pos	*Pacman;
 	void	*Pacman_wall;
 	void	*Pacman_colec;
 	void	*Pacman_exit;
-	int		Pacman_x;
-	int		Pacman_y;
 	char	**map;
 	int		map_height;
 	int		size_x;
@@ -38,6 +43,7 @@ typedef		struct s_game
 	int		width;
 	void	*nbr_move;
 }	t_game;
+
 
 #define KEY_PRESS 2
 #define KEY_RELEASE 3
@@ -51,11 +57,17 @@ void	ft_map_init(t_game *game);
 void	ft_print_map(t_game *game);
 void	ft_print_map(t_game *game);
 void ft_new_position(int x, int y, t_game *game);
-void ft_init_map(t_game *game);
+void ft_init_player(t_game *game);
 void ft_game_init(t_game *game);
 void	ft_parsing_map(t_game *game);
 int	ft_update(t_game *game);
 void size_map(t_game *game);
 int		move_is_good(t_game *game, int x, int y);
+void	ft_move_left(t_game *game);
+void	ft_move_right(t_game *game);
+void	ft_move_down(t_game *game);
+void	ft_move_up(t_game *game);
+void	ft_init(t_game *game);
+void ft_print_map(t_game *game);
 
 #endif

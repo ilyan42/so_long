@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parsing_map.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 15:28:56 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/15 16:21:30 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/17 14:30:21 by ilyanbendib      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ void ft_parsing_map(t_game *game)
 	
 	while (tmp && i < game->map_height)
 	{
-		game->map[i] = tmp;
+		game->map[i] = ft_strdup(tmp);
+		free(tmp);
 		tmp = get_next_line(fd);	
 		i++;
 	}

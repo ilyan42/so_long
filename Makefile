@@ -3,16 +3,18 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+         #
+#    By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/06 17:49:42 by ilbendib          #+#    #+#              #
-#    Updated: 2023/12/14 15:30:37 by ilbendib         ###   ########.fr        #
+#    Updated: 2023/12/17 16:06:32 by ilyanbendib      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 _SRCS = 		main.c 	game/ft_map_init.c\
 						game/ft_handle_key_press.c\
 						game/ft_parsing_map.c\
+						game/ft_move_is_good.c\
+						game/ft_move.c\
 
 SRC_DIR = .
 
