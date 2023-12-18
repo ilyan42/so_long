@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 15:28:56 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/18 15:24:36 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/18 18:57:00 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void ft_parsing_map(t_game *game)
 		tmp = get_next_line(fd);
 	}
 	close(fd);
-
+	
 	fd = open("./map/map2.ber", O_RDONLY);
 	tmp = get_next_line(fd);
 	game->map = malloc(sizeof(char*) * (game->map_height + 1));
@@ -56,7 +56,7 @@ void ft_parsing_map(t_game *game)
 	{
 		game->map[i] = ft_strdup(tmp);
 		free(tmp);
-		tmp = get_next_line(fd);	
+		tmp = get_next_line(fd);
 		i++;
 	}
 	game->map[i] = NULL;

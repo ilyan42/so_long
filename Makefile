@@ -6,7 +6,7 @@
 #    By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/06 17:49:42 by ilbendib          #+#    #+#              #
-#    Updated: 2023/12/18 13:52:27 by ilbendib         ###   ########.fr        #
+#    Updated: 2023/12/18 17:07:20 by ilbendib         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ _SRCS = 		main.c 	game/ft_map_init.c\
 						game/ft_move_is_good.c\
 						game/ft_move.c\
 						game/ft_nb_colect.c\
+						game/ft_move_monster.c\
 
 SRC_DIR = .
 

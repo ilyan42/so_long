@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 16:52:38 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2023/12/18 16:06:26 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/18 18:46:39 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,16 @@ int	move_is_good(t_game *game, int x, int y)
 			exit(0);
 		}
 	}
+	return (0);
+}
+
+int	move_monster_is_good(t_monstre *game, int x, int y)
+{
+	ft_printf("------ici-----\n");
+	if (game->map[y][x] == '1')
+		return (0);
+	ft_printf("------ici-----\n");
+	if (game->map[y][x] == '0')
+		return (1);
 	return (0);
 }
