@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_map_init.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 17:39:28 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2023/12/17 16:08:08 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2023/12/18 16:07:47 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,20 @@ void ft_game_init(t_game *game)
     img_size = SIZE; 
 	
 	game->nbr_move = 0;
+	game->nbr_colec = 0;
+	game->nbr_colect_in_map = 0;
 	game->height = game->size_x;
 	game->width = game->size_y;	
     game->mlx = mlx_init();
-    game->win = mlx_new_window(game->mlx, game->height * img_size, game->width * img_size, "crime buster");
+    game->win = mlx_new_window(game->mlx, game->height * img_size, game->width * img_size, "Pacman");
     game->Pacman_colec = mlx_xpm_file_to_image(game->mlx, "./img/colec.xpm", &img_size, &img_size);
     game->Pacman = mlx_xpm_file_to_image(game->mlx, "./img/pacmanv3.xpm", &img_size, &img_size);
     game->Pacman_exit = mlx_xpm_file_to_image(game->mlx, "./img/exit_pac.xpm", &img_size, &img_size);
     game->Pacman_wall = mlx_xpm_file_to_image(game->mlx, "./img/Walll.xpm", &img_size, &img_size);
     game->Pacman_gnd = mlx_xpm_file_to_image(game->mlx, "./img/ground_pac.xpm", &img_size, &img_size);
+	game->Monster_red = mlx_xpm_file_to_image(game->mlx, "./img/Monster_red.xpm", &img_size, &img_size);
+	game->Monster_green = mlx_xpm_file_to_image(game->mlx, "./img/Monster_green.xpm", &img_size, &img_size);
+	game->Monster_blue = mlx_xpm_file_to_image(game->mlx, "./img/Monster_blue.xpm", &img_size, &img_size);
 }
 
 void	ft_init_player(t_game *game)
@@ -57,7 +62,6 @@ void ft_print_map(t_game *game)
 
 	img_size = SIZE;
 	y = 0;
-	
 	while(game->map[y])
 	{
 		x = 0;
@@ -65,14 +69,18 @@ void ft_print_map(t_game *game)
 		{
 			if (game->map[y][x] == '1')
 				mlx_put_image_to_window(game->mlx, game->win, game->Pacman_wall, x * img_size, y * img_size);
-			// if (game->map[y][x] == 'P')
-			// 	mlx_put_image_to_window(game->mlx, game->win, game->Pacman, x * img_size, y * img_size);
 			if (game->map[y][x] == '0')
 				mlx_put_image_to_window(game->mlx, game->win, game->Pacman_gnd, x * img_size, y * img_size);
 			if (game->map[y][x] == 'C')
 				mlx_put_image_to_window(game->mlx, game->win, game->Pacman_colec, x * img_size, y * img_size + 11);
 			if (game->map[y][x] == 'E')
 				mlx_put_image_to_window(game->mlx, game->win, game->Pacman_exit, x * img_size, y * img_size + 11);
+			if (game->map[y][x] == 'R')
+				mlx_put_image_to_window(game->mlx, game->win, game->Monster_red, x * img_size, y * img_size);
+			if (game->map[y][x] == 'G')
+				mlx_put_image_to_window(game->mlx, game->win, game->Monster_green, x * img_size, y * img_size);
+			if (game->map[y][x] == 'B')
+				mlx_put_image_to_window(game->mlx, game->win, game->Monster_blue, x * img_size, y * img_size);
 			x++;
 		}
 		y++;

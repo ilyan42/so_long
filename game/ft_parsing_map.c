@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parsing_map.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 15:28:56 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/17 14:30:21 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2023/12/18 15:24:36 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,5 @@ void ft_parsing_map(t_game *game)
 		i++;
 	}
 	game->map[i] = NULL;
-	
-	ft_printf("------------------------ICI--------------------\n");
-	for (int y = 0; y < i; y++ )
-	{
-		ft_printf("%s", game->map[y]);
-	}
 	close(fd);
 }

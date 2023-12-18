@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_handle_key_press.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilyanbendib <ilyanbendib@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 16:27:08 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2023/12/17 14:31:36 by ilyanbendib      ###   ########.fr       */
+/*   Updated: 2023/12/18 12:07:34 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,19 @@ int ft_handle_key_press(int keycode, void *param)
     }
     else
     {
-        printf("Touche appuyée : %d\n", keycode);
-
-        if (keycode == 13)
+        if (keycode == Z || keycode == W)
         {
 			ft_move_up(game);
         }
-        else if (keycode == 1)
+        else if (keycode == Q || keycode == S_QW)
         {
 			ft_move_down(game);
         }
-        else if (keycode == 0)
+        else if (keycode == S || keycode == A)
         {
             ft_move_left(game);
         }
-        else if (keycode == 2)
+        else if (keycode == D || keycode == D_QW)
         {
             ft_move_right(game);
         }
