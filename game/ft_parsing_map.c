@@ -6,22 +6,22 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 15:28:56 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/18 18:57:00 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/20 19:23:34 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void size_map(t_game *game)
+void	size_map(t_game *game)
 {
-	int x;
-	int y;
+	int	x;
+	int	y;
 
 	y = 0;
-	while(game->map[y])
+	while (game->map[y])
 	{
 		x = 0;
-		while(game->map[y][x])
+		while (game->map[y][x])
 		{
 			x++;
 		}
@@ -31,13 +31,10 @@ void size_map(t_game *game)
 	game->size_y = y;
 }
 
-void ft_parsing_map(t_game *game)
+void	count_map_height(t_game *game, int fd)
 {
-	int fd;	
-	char *tmp;
-	game->map_height = 0;
-	
-	fd = open("./map/map2.ber", O_RDONLY);
+	char	*tmp;
+
 	tmp = get_next_line(fd);
 	while (tmp)
 	{
@@ -45,13 +42,16 @@ void ft_parsing_map(t_game *game)
 		free(tmp);
 		tmp = get_next_line(fd);
 	}
-	close(fd);
-	
-	fd = open("./map/map2.ber", O_RDONLY);
+}
+
+void	allocate_and_fill_map(t_game *game, int fd)
+{
+	char	*tmp;
+	int		i;
+
+	i = 0;
 	tmp = get_next_line(fd);
-	game->map = malloc(sizeof(char*) * (game->map_height + 1));
-	int i = 0;
-	
+	game->map = malloc(sizeof(char *) * (game->map_height + 1));
 	while (tmp && i < game->map_height)
 	{
 		game->map[i] = ft_strdup(tmp);
@@ -60,5 +60,16 @@ void ft_parsing_map(t_game *game)
 		i++;
 	}
 	game->map[i] = NULL;
+}
+
+void	ft_parsing_map(t_game *game)
+{
+	int	fd;
+
+	fd = open("./map/map2.ber", O_RDONLY);
+	count_map_height(game, fd);
+	close(fd);
+	fd = open("./map/map2.ber", O_RDONLY);
+	allocate_and_fill_map(game, fd);
 	close(fd);
 }

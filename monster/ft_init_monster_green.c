@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nb_colect.c                                     :+:      :+:    :+:   */
+/*   ft_init_monster_green.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/18 13:46:24 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/19 17:11:41 by ilbendib         ###   ########.fr       */
+/*   Created: 2023/12/19 16:14:40 by ilbendib          #+#    #+#             */
+/*   Updated: 2023/12/19 17:07:29 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	nb_colect_in_map(t_game *game)
+void	ft_draw_monster_green(t_game *game)
+{
+	mlx_put_image_to_window(game->mlx, game->win, game->Monster_green,
+		game->Monster_green->x * SIZE, game->Monster_green->y * SIZE);
+}
+
+void	ft_pos_monster_green(t_game *game)
 {
 	int	x;
 	int	y;
@@ -23,10 +29,16 @@ void	nb_colect_in_map(t_game *game)
 		x = 0;
 		while (game->map[y][x])
 		{
-			if (game->map[y][x] == 'C')
-				game->nbr_colect_in_map += 1;
+			if (game->map[y][x] == 'G')
+				ft_new_position_monster_green(x, y, game);
 			x++;
 		}
 		y++;
 	}
+}
+
+void	ft_new_position_monster_green(int x, int y, t_game *game)
+{
+	game->Monster_green->x = x;
+	game->Monster_green->y = y;
 }
