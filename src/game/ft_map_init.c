@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 17:39:28 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2023/12/21 15:38:52 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/21 16:08:57 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,19 +73,23 @@ void	ft_game_init(t_game *game)
 	mlx_clear_window(game->mlx, game->win);
 }
 
-int	ft_update(t_game *game)
+int ft_update(t_game *game)
 {
-	static int	count;
+	static int count;
 
 	count++;
 	if (count == 5000)
 	{
 		ft_print_map(game);
-		ft_move_monster_blue(game);
-		ft_move_monster_green(game);
-		ft_move_monster_red(game);
+		if (ft_monster_blue_is_present(game))
+			ft_move_monster_blue(game);
+		if (ft_monster_green_is_present(game))
+			ft_move_monster_green(game);
+		if (ft_monster_red_is_present(game))
+			ft_move_monster_red(game);
 		ft_print_movements(game);
 		count = 0;
 	}
 	return (0);
 }
+

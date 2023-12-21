@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 15:28:56 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/21 15:39:34 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/21 15:54:31 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,27 @@ void	allocate_and_fill_map(t_game *game, int fd)
 	game->map[i] = NULL;
 }
 
-void	ft_parsing_map(t_game *game)
+void	is_ber_file(char *map)
+{
+	char	*extensions_check;
+
+	extensions_check = ft_strnstr(map, ".ber", ft_strlen(map));
+	if (extensions_check == NULL || ft_strlen(extensions_check) != 4)
+	{
+		ft_printf("Error\nExtensions check\n");
+		exit(EXIT_FAILURE);
+	}
+}
+
+void	ft_parsing_map(char *file, t_game *game)
 {
 	int	fd;
 
-	fd = open("./map/map2.ber", O_RDONLY);
+	is_ber_file(file);
+	fd = open(file, O_RDONLY);
 	count_map_height(game, fd);
 	close(fd);
-	fd = open("./map/map2.ber", O_RDONLY);
+	fd = open(file, O_RDONLY);
 	allocate_and_fill_map(game, fd);
 	close(fd);
 }

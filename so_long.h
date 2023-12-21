@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:49:36 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/21 13:40:34 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/21 16:23:49 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,11 @@ typedef struct s_game
 # define S 0
 # define D 2
 
+# define UP 65362
+# define DOWN 65364
+# define RIGHT 65363
+# define LEFT 65361
+
 void		ft_draw_pacman_down(t_game *game);
 void		ft_draw_pacman_up(t_game *game);
 void		ft_draw_pacman_left(t_game *game);
@@ -84,7 +89,7 @@ void		ft_print_map(t_game *game);
 void		ft_new_position(int x, int y, t_game *game);
 void		ft_init_player(t_game *game);
 void		ft_game_init(t_game *game);
-void		ft_parsing_map(t_game *game);
+void		ft_parsing_map(char *file, t_game *game);
 int			ft_update(t_game *game);
 void		size_map(t_game *game);
 int			move_is_good(t_game *game, int x, int y);
@@ -109,6 +114,7 @@ void		load_images(t_game *game, int img_size);
 void		initialize_window(t_game *game, int img_size);
 void		allocate_and_fill_map(t_game *game, int fd);
 void		count_map_height(t_game *game, int fd);
+void	is_ber_file(char *map);
 
 /*******************Monster_Blue*******************/
 
@@ -123,6 +129,7 @@ void		ft_move_monster_up_blue(t_game *game);
 void		ft_move_monster_down_blue(t_game *game);
 void		ft_move_monster_vertical_blue(t_game *game);
 void		ft_move_monster_horizontal_blue(t_game *game);
+int	ft_monster_blue_is_present(t_game *game);
 
 /*******************Monster_Green*******************/
 
@@ -132,6 +139,7 @@ void		ft_new_position_monster_green(int x, int y, t_game *game);
 void		ft_move_monster_down_green(t_game *game);
 void		ft_move_monster_up_green(t_game *game);
 void		ft_move_monster_green(t_game *game);
+int	ft_monster_green_is_present(t_game *game);
 
 /*******************Monster_red*******************/
 
@@ -141,6 +149,7 @@ void		ft_move_monster_red(t_game *game);
 void		ft_draw_monster_red(t_game *game);
 void		ft_pos_monster_red(t_game *game);
 void		ft_new_position_monster_red(int x, int y, t_game *game);
+int	ft_monster_red_is_present(t_game *game);
 
 
 void		ft_check_map(t_game *game);
