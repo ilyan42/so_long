@@ -6,13 +6,12 @@
 #    By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/06 17:49:42 by ilbendib          #+#    #+#              #
-#    Updated: 2023/12/21 15:37:29 by ilbendib         ###   ########.fr        #
+#    Updated: 2023/12/21 19:24:17 by ilbendib         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 _SRCS = 		src/main.c 	src/game/ft_map_init.c\
 						src/game/ft_handle_key_press.c\
-						src/game/ft_parsing_map.c\
 						src/game/ft_move_is_good.c\
 						src/game/ft_move.c\
 						src/game/ft_nb_colect.c\
@@ -28,6 +27,7 @@ _SRCS = 		src/main.c 	src/game/ft_map_init.c\
 						src/monster/ft_init_monster_red.c\
 						src/monster/ft_move_monster_red.c\
 						src/monster/ft_move_monster_blue_utils.c\
+						src/parsing_map/ft_parsing_map.c\
 
 
 SRC_DIR = .
