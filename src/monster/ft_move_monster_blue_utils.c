@@ -6,11 +6,11 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 19:24:37 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/20 19:26:33 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/21 15:40:00 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
 void	ft_move_monster_horizontal_blue(t_game *game)
 {

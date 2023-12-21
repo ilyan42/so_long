@@ -6,11 +6,11 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 16:19:11 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/20 19:27:06 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/21 15:40:04 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
 int	move_monster_is_good(t_game *game, int x, int y)
 {

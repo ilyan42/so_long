@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:49:36 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/20 19:38:10 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/21 13:40:34 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct s_game
 	t_pos	*Pacman;
 	void	*Pacman_wall;
 	void	*Pacman_colec;
-	void	*Pacman_exit;
+	void	*Pacman_exit_close;
 	t_pos	*Pacman_left;
 	t_pos	*Pacman_up;
 	t_pos	*Pacman_down;
@@ -52,6 +52,10 @@ typedef struct s_game
 	int		monster_red_direction;
 	t_pos	*Monster_green;
 	t_pos	*Monster_red;
+	void	*Pacman_exit_open;
+	int		map_player;
+	int		map_colect;
+	int		map_exit;
 }			t_game;
 
 # define KEY_PRESS 2
@@ -137,5 +141,11 @@ void		ft_move_monster_red(t_game *game);
 void		ft_draw_monster_red(t_game *game);
 void		ft_pos_monster_red(t_game *game);
 void		ft_new_position_monster_red(int x, int y, t_game *game);
+
+
+void		ft_check_map(t_game *game);
+void		ft_check_map_exit(t_game *game);
+void		ft_check_map_colec(t_game *game);
+void		ft_check_map_player(t_game *game);
 
 #endif

@@ -6,11 +6,11 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 17:39:28 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2023/12/20 19:12:04 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/21 15:38:52 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
 void	initialize_window(t_game *game, int img_size)
 {
@@ -25,7 +25,7 @@ void	load_images(t_game *game, int img_size)
 			&img_size, &img_size);
 	game->Pacman = mlx_xpm_file_to_image(game->mlx, "./img/pacman_right.xpm",
 			&img_size, &img_size);
-	game->Pacman_exit = mlx_xpm_file_to_image(game->mlx, "./img/exit_pac.xpm",
+	game->Pacman_exit_close = mlx_xpm_file_to_image(game->mlx, "./img/ground_pac.xpm",
 			&img_size, &img_size);
 	game->Pacman_wall = mlx_xpm_file_to_image(game->mlx, "./img/Walll.xpm",
 			&img_size, &img_size);
@@ -43,6 +43,8 @@ void	load_images(t_game *game, int img_size)
 			"./img/pacman_left.xpm", &img_size, &img_size);
 	game->Pacman_down = mlx_xpm_file_to_image(game->mlx,
 			"./img/pacman_down.xpm", &img_size, &img_size);
+	game->Pacman_exit_open = mlx_xpm_file_to_image(game->mlx, "./img/exit_pac.xpm",
+			&img_size, &img_size);
 }
 
 void	initialize_game(t_game *game)
@@ -53,6 +55,9 @@ void	initialize_game(t_game *game)
 	game->monster_direction = 1;
 	game->monster_green_direction = 0;
 	game->monster_red_direction = 0;
+	game->map_colect = 0;
+	game->map_exit = 0;
+	game->map_player = 0;
 	game->height = game->size_x;
 	game->width = game->size_y;
 }

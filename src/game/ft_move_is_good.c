@@ -6,11 +6,11 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 16:52:38 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2023/12/20 18:31:27 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/21 15:39:21 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
 int	nb_colec_is_good(t_game *game)
 {

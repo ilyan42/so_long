@@ -6,11 +6,11 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 19:08:16 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/20 19:10:08 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/21 15:39:06 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
 void	print_wall(t_game *game, int x, int y)
 {
@@ -32,6 +32,12 @@ void	print_collectible(t_game *game, int x, int y)
 
 void	print_exit(t_game *game, int x, int y)
 {
-	mlx_put_image_to_window(game->mlx, game->win, game->Pacman_exit, x * SIZE, y
+	if (nb_colec_is_good(game))
+	{
+		mlx_put_image_to_window(game->mlx, game->win, game->Pacman_exit_open, x * SIZE, y
+		* SIZE + 11);
+	}
+	else
+		mlx_put_image_to_window(game->mlx, game->win, game->Pacman_exit_close, x * SIZE, y
 		* SIZE + 11);
 }

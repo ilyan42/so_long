@@ -6,11 +6,11 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 19:19:06 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/20 18:22:20 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/21 15:39:13 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
 void	ft_draw_pacman_right(t_game *game)
 {

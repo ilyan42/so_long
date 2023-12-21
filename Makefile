@@ -6,27 +6,28 @@
 #    By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/06 17:49:42 by ilbendib          #+#    #+#              #
-#    Updated: 2023/12/20 19:25:54 by ilbendib         ###   ########.fr        #
+#    Updated: 2023/12/21 15:37:29 by ilbendib         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-_SRCS = 		main.c 	game/ft_map_init.c\
-						game/ft_handle_key_press.c\
-						game/ft_parsing_map.c\
-						game/ft_move_is_good.c\
-						game/ft_move.c\
-						game/ft_nb_colect.c\
-						game/ft_draw_pacman.c\
-						game/ft_draw_map.c\
-						game/ft_put_map.c\
-						game/ft_draw_monster.c\
-						monster/ft_init_monster_blue.c\
-						monster/ft_move_monster_blue.c\
-						monster/ft_init_monster_green.c\
-						monster/ft_move_monster_green.c\
-						monster/ft_init_monster_red.c\
-						monster/ft_move_monster_red.c\
-						monster/ft_move_monster_blue_utils.c\
+_SRCS = 		src/main.c 	src/game/ft_map_init.c\
+						src/game/ft_handle_key_press.c\
+						src/game/ft_parsing_map.c\
+						src/game/ft_move_is_good.c\
+						src/game/ft_move.c\
+						src/game/ft_nb_colect.c\
+						src/game/ft_draw_pacman.c\
+						src/game/ft_draw_map.c\
+						src/game/ft_put_map.c\
+						src/game/ft_draw_monster.c\
+						src/game/ft_check_map.c\
+						src/monster/ft_init_monster_blue.c\
+						src/monster/ft_move_monster_blue.c\
+						src/monster/ft_init_monster_green.c\
+						src/monster/ft_move_monster_green.c\
+						src/monster/ft_init_monster_red.c\
+						src/monster/ft_move_monster_red.c\
+						src/monster/ft_move_monster_blue_utils.c\
 
 
 SRC_DIR = .

@@ -6,11 +6,11 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 19:10:57 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/20 19:13:41 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/21 15:39:37 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
 void	ft_init_player(t_game *game)
 {
@@ -81,7 +81,7 @@ void	ft_print_movements(t_game *game)
 
 	movements = ft_itoa(game->nbr_move);
 	phrase = ft_strjoin("MOVEMENTS : ", movements);
-	mlx_string_put(game->mlx, game->win, 800, 680, 0xffffff, phrase);
+	mlx_string_put(game->mlx, game->win, 40, 20, 0xffffff, phrase);
 	free(movements);
 	free(phrase);
 }

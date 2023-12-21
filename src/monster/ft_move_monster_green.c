@@ -6,11 +6,11 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 16:19:11 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/20 19:26:50 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/21 15:40:07 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
 void	ft_move_monster_down_green(t_game *game)
 {
