@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 16:52:38 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2023/12/21 15:39:21 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/26 14:04:26 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 
 int	nb_colec_is_good(t_game *game)
 {
+	
 	if (game->nbr_colect_in_map == game->nbr_colec)
+	{
 		return (1);
+	}
 	return (0);
 }
 
@@ -34,14 +37,16 @@ int	move_is_good(t_game *game, int x, int y)
 		|| game->map[y][x] == 'B')
 	{
 		ft_printf("\n\nYOU DEID IN %d MOVEMENT\n\n", game->nbr_move);
-		exit(0);
+		// exit(0);
+		close_game(game);
 	}
 	if (game->map[y][x] == 'E')
 	{
 		if (nb_colec_is_good(game))
 		{
 			ft_printf("\n\nYOU WON IN %d MOVEMENT\n\n", game->nbr_move);
-			exit(0);
+			// exit(0);
+			close_game(game);
 		}
 	}
 	return (0);

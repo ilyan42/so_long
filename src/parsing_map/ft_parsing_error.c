@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 13:34:43 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/26 13:45:25 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/26 14:08:24 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,13 @@ void	player_position(int x, int y, t_game *game)
 	game->player_position->y = y;
 }
 
+int	is_rectangular(t_game *game)
+{
+	if (game->size_x > game->size_y || game->size_x < game->size_y)
+		return (1);
+	return (0);
+}
+
 void	ft_layout(t_game *game)
 {
 	int	y;
@@ -92,11 +99,24 @@ void	ft_layout(t_game *game)
 	// check_walls(game);
 	// if (!game->player || game->player != 1)
 	// 	error_game(game);
-	if (!pathfinder(game))
+	if (!pathfinder(game) || !is_rectangular(game))
 	{
 		printf("Error\nMap isn't rectangular or isn't playable\n");
 		exit(0);
 	}
+}
+
+void	ft_free_splitted_map(char **tab)
+{
+	char	**temp;
+
+	temp = tab;
+	while (*tab)
+	{
+		free(*tab);
+		tab++;
+	}
+	free(temp);
 }
 
 int	pathfinder(t_game *game)
@@ -110,7 +130,7 @@ int	pathfinder(t_game *game)
 	game->nb_moves = 0;
 	flood(game->player_position->x, game->player_position->y, game);
 	is_path = check_collec_exit(game);
-	// ft_free_splitted_map(game->map_dup);
+	ft_free_splitted_map(game->map_dup);
 	game->collect = nb_collec;
 	return (is_path);
 }
