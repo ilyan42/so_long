@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 13:34:43 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/26 14:14:57 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/26 14:57:02 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,15 +86,13 @@ void	ft_layout(t_game *game)
 		x = -1;
 		while (game->map[y][++x])
 		{
-			if (game->map[y][x] == 'C')
-				game->collect += 1;
-			if (game->map[y][x] == 'E')
-				game->pacman_exit_open += 1;
+			// if (game->map[y][x] == 'C')
+			// 	game->collect += 1;
+			// if (game->map[y][x] == 'E')
+			// 	game->pacman_exit_open += 1;
 			if (game->map[y][x] == 'P')
 				player_position(x, y, game);
-			// y++;
 		}
-		// x++;
 	}
 	game->size_x = y;
 	game->size_y = x;
