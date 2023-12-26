@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 13:23:59 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/26 14:56:15 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/26 15:09:31 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,17 +77,17 @@ void	ft_check_map(t_game *game)
 
 	if (game->map_colect == 0)
 	{
-		ft_printf("ERROR 1");
+		ft_printf("ERROR\n 0 collect");
 		exit(0);
 	}
 	if (game->map_exit != 1)
 	{
-		ft_printf("ERROR 2");
+		ft_printf("ERROR\n 0 or to many exit");
 		exit(0);
 	}
 	if (game->map_player != 1)
 	{
-		ft_printf("ERROR 3");
+		ft_printf("ERROR\n to many player");
 		exit(0);
 	}
 	ft_layout(game);
