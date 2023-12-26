@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 17:39:28 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2023/12/26 14:51:30 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/26 16:21:43 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,17 @@
 void	initialize_window(t_game *game, int img_size)
 {
 	game->mlx = mlx_init();
+	if (!game->mlx)
+	{
+		ft_printf("Error: environement not set\n");
+		return (exit(0), (void)0);
+	}
+	// if (game->height * img_size > 1080 || game->width
+	// 		* img_size > 1920)
+	// {
+	// 	ft_printf("Error: environement not set 2\n");
+	// 	return (exit(0), (void)0);
+	// }
 	game->win = mlx_new_window(game->mlx, game->height * img_size, game->width
 			* img_size, "Pacman");
 }
@@ -24,8 +35,6 @@ void	load_images(t_game *game, int img_size)
 	game->pacman_colec = mlx_xpm_file_to_image(game->mlx, "./img/colec.xpm",
 			&img_size, &img_size);
 	game->pacman_img = mlx_xpm_file_to_image(game->mlx, "./img/pacman_right.xpm",
-			&img_size, &img_size);
-	game->pacman_exit_close = mlx_xpm_file_to_image(game->mlx, "./img/ground_pac.xpm",
 			&img_size, &img_size);
 	game->pacman_wall = mlx_xpm_file_to_image(game->mlx, "./img/Walll.xpm",
 			&img_size, &img_size);
@@ -43,7 +52,9 @@ void	load_images(t_game *game, int img_size)
 			"./img/pacman_left.xpm", &img_size, &img_size);
 	game->pacman_down = mlx_xpm_file_to_image(game->mlx,
 			"./img/pacman_down.xpm", &img_size, &img_size);
-	game->pacman_exit_open = mlx_xpm_file_to_image(game->mlx, "./img/exit_pac.xpm",
+	game->pacman_exit_close = mlx_xpm_file_to_image(game->mlx, "./img/exit_pac.xpm",
+			&img_size, &img_size);
+	game->pacman_exit_open = mlx_xpm_file_to_image(game->mlx, "./img/exit_pac_open.xpm",
 			&img_size, &img_size);
 }
 

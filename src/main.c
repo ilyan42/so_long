@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 17:48:40 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/26 14:31:11 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/26 15:52:03 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	ft_free_img(t_game *game)
 	mlx_destroy_image(game->mlx, game->monster_blue_img);
 	mlx_destroy_image(game->mlx, game->monster_green_img);
 	mlx_destroy_image(game->mlx, game->monster_red_img);
+	mlx_destroy_image(game->mlx, game->pacman_gnd);
+	
 }
 
 int	close_game(t_game *game)
@@ -40,6 +42,7 @@ int	close_game(t_game *game)
 	free(game->monster_blue);
 	free(game->monster_red);
 	free(game->monster_green);
+	free(game->player_position);
 	exit(EXIT_SUCCESS);
 	return (0);
 }

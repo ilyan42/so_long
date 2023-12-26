@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 16:27:08 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2023/12/21 16:25:10 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/26 16:08:26 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_handle_key_press(int keycode, void *param)
 	if (keycode == ESCAPE_KEY || keycode == 53)
 	{
 		printf("Programme terminé.\n");
-		exit(0);
+		close_game(game);
 	}
 	else
 	{

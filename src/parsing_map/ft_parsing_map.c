@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 15:28:56 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/21 15:54:31 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/26 15:58:18 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	count_map_height(t_game *game, int fd)
 	char	*tmp;
 
 	tmp = get_next_line(fd);
+	game->map_height = 0;
 	while (tmp)
 	{
 		game->map_height++;
