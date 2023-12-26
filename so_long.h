@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:49:36 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/26 14:54:36 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/26 15:18:25 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,10 +130,10 @@ void		is_ber_file(char *map);
 
 void		ft_layout(t_game *game);
 int			pathfinder(t_game *game);
-int	close_game(t_game *game);
-void	ft_free_img(t_game *game);
-void	ft_free_splitted_map(char **tab);
-int	is_rectangular(t_game *game);
+int			close_game(t_game *game);
+void		ft_free_img(t_game *game);
+void		ft_free_splitted_map(char **tab);
+int			is_rectangular(t_game *game);
 
 /*******************Monster_Blue*******************/
 
