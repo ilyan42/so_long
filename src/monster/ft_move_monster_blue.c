@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 16:19:11 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/21 15:40:04 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/26 13:28:53 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ void	ft_move_monster_left_blue(t_game *game)
 	int	x;
 	int	y;
 
-	x = game->Monster_blue->x;
-	y = game->Monster_blue->y;
+	x = game->monster_blue->x;
+	y = game->monster_blue->y;
 	game->map[y][x] = '0';
 	game->map[y][x - 1] = 'B';
-	game->Monster_blue->x = x - 1;
+	game->monster_blue->x = x - 1;
 }
 
 void	ft_move_monster_right_blue(t_game *game)
@@ -44,11 +44,11 @@ void	ft_move_monster_right_blue(t_game *game)
 	int	x;
 	int	y;
 
-	x = game->Monster_blue->x;
-	y = game->Monster_blue->y;
+	x = game->monster_blue->x;
+	y = game->monster_blue->y;
 	game->map[y][x] = '0';
 	game->map[y][x + 1] = 'B';
-	game->Monster_blue->x = x + 1;
+	game->monster_blue->x = x + 1;
 }
 
 void	ft_move_monster_up_blue(t_game *game)
@@ -56,11 +56,11 @@ void	ft_move_monster_up_blue(t_game *game)
 	int	x;
 	int	y;
 
-	x = game->Monster_blue->x;
-	y = game->Monster_blue->y;
+	x = game->monster_blue->x;
+	y = game->monster_blue->y;
 	game->map[y][x] = '0';
 	game->map[y - 1][x] = 'B';
-	game->Monster_blue->y = y - 1;
+	game->monster_blue->y = y - 1;
 }
 
 void	ft_move_monster_down_blue(t_game *game)
@@ -68,9 +68,9 @@ void	ft_move_monster_down_blue(t_game *game)
 	int	x;
 	int	y;
 
-	x = game->Monster_blue->x;
-	y = game->Monster_blue->y;
+	x = game->monster_blue->x;
+	y = game->monster_blue->y;
 	game->map[y][x] = '0';
 	game->map[y + 1][x] = 'B';
-	game->Monster_blue->y = y + 1;
+	game->monster_blue->y = y + 1;
 }

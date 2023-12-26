@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 17:39:28 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2023/12/21 16:08:57 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/26 13:26:46 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,34 +21,38 @@ void	initialize_window(t_game *game, int img_size)
 
 void	load_images(t_game *game, int img_size)
 {
-	game->Pacman_colec = mlx_xpm_file_to_image(game->mlx, "./img/colec.xpm",
+	game->pacman_colec = mlx_xpm_file_to_image(game->mlx, "./img/colec.xpm",
 			&img_size, &img_size);
-	game->Pacman = mlx_xpm_file_to_image(game->mlx, "./img/pacman_right.xpm",
+	game->pacman_img = mlx_xpm_file_to_image(game->mlx, "./img/pacman_right.xpm",
 			&img_size, &img_size);
-	game->Pacman_exit_close = mlx_xpm_file_to_image(game->mlx, "./img/ground_pac.xpm",
+	game->pacman_exit_close = mlx_xpm_file_to_image(game->mlx, "./img/ground_pac.xpm",
 			&img_size, &img_size);
-	game->Pacman_wall = mlx_xpm_file_to_image(game->mlx, "./img/Walll.xpm",
+	game->pacman_wall = mlx_xpm_file_to_image(game->mlx, "./img/Walll.xpm",
 			&img_size, &img_size);
-	game->Pacman_gnd = mlx_xpm_file_to_image(game->mlx, "./img/ground_pac.xpm",
+	game->pacman_gnd = mlx_xpm_file_to_image(game->mlx, "./img/ground_pac.xpm",
 			&img_size, &img_size);
-	game->Monster_red = mlx_xpm_file_to_image(game->mlx,
+	game->monster_red_img = mlx_xpm_file_to_image(game->mlx,
 			"./img/Monster_red.xpm", &img_size, &img_size);
-	game->Monster_green = mlx_xpm_file_to_image(game->mlx,
+	game->monster_green_img = mlx_xpm_file_to_image(game->mlx,
 			"./img/Monster_green.xpm", &img_size, &img_size);
-	game->Monster_blue = mlx_xpm_file_to_image(game->mlx,
+	game->monster_blue_img = mlx_xpm_file_to_image(game->mlx,
 			"./img/Monster_blue.xpm", &img_size, &img_size);
-	game->Pacman_up = mlx_xpm_file_to_image(game->mlx, "./img/pacman_up.xpm",
+	game->pacman_up = mlx_xpm_file_to_image(game->mlx, "./img/pacman_up.xpm",
 			&img_size, &img_size);
-	game->Pacman_left = mlx_xpm_file_to_image(game->mlx,
+	game->pacman_left = mlx_xpm_file_to_image(game->mlx,
 			"./img/pacman_left.xpm", &img_size, &img_size);
-	game->Pacman_down = mlx_xpm_file_to_image(game->mlx,
+	game->pacman_down = mlx_xpm_file_to_image(game->mlx,
 			"./img/pacman_down.xpm", &img_size, &img_size);
-	game->Pacman_exit_open = mlx_xpm_file_to_image(game->mlx, "./img/exit_pac.xpm",
+	game->pacman_exit_open = mlx_xpm_file_to_image(game->mlx, "./img/exit_pac.xpm",
 			&img_size, &img_size);
 }
 
 void	initialize_game(t_game *game)
 {
+	game->pacman = malloc(sizeof(t_game));
+	game->monster_red = malloc(sizeof(t_game));
+	game->monster_blue = malloc(sizeof(t_game));
+	game->monster_green = malloc(sizeof(t_game));
 	game->nbr_move = 0;
 	game->nbr_colec = 0;
 	game->nbr_colect_in_map = 0;

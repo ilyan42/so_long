@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 16:14:40 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/21 15:39:44 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/26 13:27:57 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_draw_monster_green(t_game *game)
 {
-	mlx_put_image_to_window(game->mlx, game->win, game->Monster_green,
-		game->Monster_green->x * SIZE, game->Monster_green->y * SIZE);
+	mlx_put_image_to_window(game->mlx, game->win, game->monster_green_img,
+		game->monster_green->x * SIZE, game->monster_green->y * SIZE);
 }
 
 void	ft_pos_monster_green(t_game *game)
@@ -39,6 +39,6 @@ void	ft_pos_monster_green(t_game *game)
 
 void	ft_new_position_monster_green(int x, int y, t_game *game)
 {
-	game->Monster_green->x = x;
-	game->Monster_green->y = y;
+	game->monster_green->x = x;
+	game->monster_green->y = y;
 }

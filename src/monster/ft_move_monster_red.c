@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 16:19:11 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/21 15:40:10 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/26 13:29:30 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ void	ft_move_monster_left_red(t_game *game)
 	int	x;
 	int	y;
 
-	x = game->Monster_red->x;
-	y = game->Monster_red->y;
+	x = game->monster_red->x;
+	y = game->monster_red->y;
 	game->map[y][x] = '0';
 	game->map[y][x - 1] = 'R';
-	game->Monster_red->x = x - 1;
+	game->monster_red->x = x - 1;
 }
 
 void	ft_move_monster_right_red(t_game *game)
@@ -29,11 +29,11 @@ void	ft_move_monster_right_red(t_game *game)
 	int	x;
 	int	y;
 
-	x = game->Monster_red->x;
-	y = game->Monster_red->y;
+	x = game->monster_red->x;
+	y = game->monster_red->y;
 	game->map[y][x] = '0';
 	game->map[y][x + 1] = 'R';
-	game->Monster_red->x = x + 1;
+	game->monster_red->x = x + 1;
 }
 
 void	ft_move_monster_red(t_game *game)
@@ -41,8 +41,8 @@ void	ft_move_monster_red(t_game *game)
 	int	x;
 	int	y;
 
-	x = game->Monster_red->x;
-	y = game->Monster_red->y;
+	x = game->monster_red->x;
+	y = game->monster_red->y;
 	if (game->monster_red_direction == 1)
 	{
 		if (move_monster_is_good(game, x + 1, y))

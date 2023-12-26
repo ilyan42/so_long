@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:49:36 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/21 16:23:49 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/26 13:26:07 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,15 @@ typedef struct s_game
 {
 	void	*mlx;
 	void	*win;
-	void	*Pacman_gnd;
-	t_pos	*Pacman;
-	void	*Pacman_wall;
-	void	*Pacman_colec;
-	void	*Pacman_exit_close;
-	t_pos	*Pacman_left;
-	t_pos	*Pacman_up;
-	t_pos	*Pacman_down;
+	void	*pacman_gnd;
+	void	*pacman_img;
+	t_pos	*pacman;
+	void	*pacman_wall;
+	void	*pacman_colec;
+	void	*pacman_exit_close;
+	void	*pacman_left;
+	void	*pacman_up;
+	void	*pacman_down;
 	char	**map;
 	int		map_height;
 	int		size_x;
@@ -46,13 +47,16 @@ typedef struct s_game
 	int		nbr_move;
 	void	*nbr_colec;
 	void	*nbr_colect_in_map;
-	t_pos	*Monster_blue;
+	void	*monster_blue_img;
+	void	*monster_red_img;
+	void	*monster_green_img;
+	t_pos	*monster_blue;
 	int		monster_direction;
 	int		monster_green_direction;
 	int		monster_red_direction;
-	t_pos	*Monster_green;
-	t_pos	*Monster_red;
-	void	*Pacman_exit_open;
+	t_pos	*monster_green;
+	t_pos	*monster_red;
+	void	*pacman_exit_open;
 	int		map_player;
 	int		map_colect;
 	int		map_exit;
@@ -114,7 +118,7 @@ void		load_images(t_game *game, int img_size);
 void		initialize_window(t_game *game, int img_size);
 void		allocate_and_fill_map(t_game *game, int fd);
 void		count_map_height(t_game *game, int fd);
-void	is_ber_file(char *map);
+void		is_ber_file(char *map);
 
 /*******************Monster_Blue*******************/
 
@@ -129,7 +133,7 @@ void		ft_move_monster_up_blue(t_game *game);
 void		ft_move_monster_down_blue(t_game *game);
 void		ft_move_monster_vertical_blue(t_game *game);
 void		ft_move_monster_horizontal_blue(t_game *game);
-int	ft_monster_blue_is_present(t_game *game);
+int			ft_monster_blue_is_present(t_game *game);
 
 /*******************Monster_Green*******************/
 
@@ -139,7 +143,7 @@ void		ft_new_position_monster_green(int x, int y, t_game *game);
 void		ft_move_monster_down_green(t_game *game);
 void		ft_move_monster_up_green(t_game *game);
 void		ft_move_monster_green(t_game *game);
-int	ft_monster_green_is_present(t_game *game);
+int			ft_monster_green_is_present(t_game *game);
 
 /*******************Monster_red*******************/
 
@@ -149,8 +153,7 @@ void		ft_move_monster_red(t_game *game);
 void		ft_draw_monster_red(t_game *game);
 void		ft_pos_monster_red(t_game *game);
 void		ft_new_position_monster_red(int x, int y, t_game *game);
-int	ft_monster_red_is_present(t_game *game);
-
+int			ft_monster_red_is_present(t_game *game);
 
 void		ft_check_map(t_game *game);
 void		ft_check_map_exit(t_game *game);

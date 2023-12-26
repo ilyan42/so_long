@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 19:10:57 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/21 15:39:37 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/26 13:30:49 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,8 @@ void	ft_print_map(t_game *game)
 
 void	ft_new_position(int x, int y, t_game *game)
 {
-	game->Pacman->x = x;
-	game->Pacman->y = y;
+	game->pacman->x = x;
+	game->pacman->y = y;
 }
 
 void	ft_print_movements(t_game *game)

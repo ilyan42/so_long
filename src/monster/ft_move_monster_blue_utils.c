@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 19:24:37 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/21 15:40:00 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/26 13:28:26 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	ft_move_monster_horizontal_blue(t_game *game)
 	int	x;
 	int	y;
 
-	x = game->Monster_blue->x;
-	y = game->Monster_blue->y;
+	x = game->monster_blue->x;
+	y = game->monster_blue->y;
 	if (game->monster_direction == 1)
 	{
 		if (move_monster_is_good(game, x + 1, y))
@@ -40,8 +40,8 @@ void	ft_move_monster_vertical_blue(t_game *game)
 	int	x;
 	int	y;
 
-	x = game->Monster_blue->x;
-	y = game->Monster_blue->y;
+	x = game->monster_blue->x;
+	y = game->monster_blue->y;
 	if (game->monster_direction == 2)
 	{
 		if (move_monster_is_good(game, x, y - 1))

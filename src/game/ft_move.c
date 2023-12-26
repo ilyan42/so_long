@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 15:53:09 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/21 15:39:25 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/26 13:30:37 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ void	ft_move_left(t_game *game)
 	int	x;
 	int	y;
 
-	x = game->Pacman->x;
-	y = game->Pacman->y;
+	x = game->pacman->x;
+	y = game->pacman->y;
 	if (move_is_good(game, x - 1, y))
 	{
 		game->map[y][x] = '0';
 		game->map[y][x - 1] = 'P';
-		game->Pacman->x = x - 1;
+		game->pacman->x = x - 1;
 		game->nbr_move += 1;
 	}
 	ft_draw_pacman_left(game);
@@ -34,13 +34,13 @@ void	ft_move_right(t_game *game)
 	int	x;
 	int	y;
 
-	x = game->Pacman->x;
-	y = game->Pacman->y;
+	x = game->pacman->x;
+	y = game->pacman->y;
 	if (move_is_good(game, x + 1, y))
 	{
 		game->map[y][x] = '0';
 		game->map[y][x + 1] = 'P';
-		game->Pacman->x = x + 1;
+		game->pacman->x = x + 1;
 		game->nbr_move += 1;
 	}
 	ft_draw_pacman_right(game);
@@ -51,13 +51,13 @@ void	ft_move_up(t_game *game)
 	int	x;
 	int	y;
 
-	x = game->Pacman->x;
-	y = game->Pacman->y;
+	x = game->pacman->x;
+	y = game->pacman->y;
 	if (move_is_good(game, x, y - 1))
 	{
 		game->map[y][x] = '0';
 		game->map[y - 1][x] = 'P';
-		game->Pacman->y = y - 1;
+		game->pacman->y = y - 1;
 		game->nbr_move += 1;
 	}
 	ft_draw_pacman_up(game);
@@ -68,13 +68,13 @@ void	ft_move_down(t_game *game)
 	int	x;
 	int	y;
 
-	x = game->Pacman->x;
-	y = game->Pacman->y;
+	x = game->pacman->x;
+	y = game->pacman->y;
 	if (move_is_good(game, x, y + 1))
 	{
 		game->map[y][x] = '0';
 		game->map[y + 1][x] = 'P';
-		game->Pacman->y = y + 1;
+		game->pacman->y = y + 1;
 		game->nbr_move += 1;
 	}
 	ft_draw_pacman_down(game);
