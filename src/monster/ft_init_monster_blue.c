@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 13:36:12 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/26 13:28:10 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/26 17:35:01 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,46 +55,6 @@ int	ft_monster_blue_is_present(t_game *game)
 		while (game->map[y][x])
 		{
 			if (game->map[y][x] == 'B')
-				return (1);
-			x++;
-		}
-		y++;
-	}
-	return (0);
-}
-
-int	ft_monster_red_is_present(t_game *game)
-{
-	int	x;
-	int	y;
-
-	y = 0;
-	while (game->map[y])
-	{
-		x = 0;
-		while (game->map[y][x])
-		{
-			if (game->map[y][x] == 'R')
-				return (1);
-			x++;
-		}
-		y++;
-	}
-	return (0);
-}
-
-int	ft_monster_green_is_present(t_game *game)
-{
-	int	x;
-	int	y;
-
-	y = 0;
-	while (game->map[y])
-	{
-		x = 0;
-		while (game->map[y][x])
-		{
-			if (game->map[y][x] == 'G')
 				return (1);
 			x++;
 		}

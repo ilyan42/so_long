@@ -14,8 +14,8 @@
 
 void	ft_draw_pacman_right(t_game *game)
 {
-	mlx_put_image_to_window(game->mlx, game->win, game->pacman_img, game->pacman->x
-		* SIZE, game->pacman->y * SIZE);
+	mlx_put_image_to_window(game->mlx, game->win, game->pacman_img,
+		game->pacman->x * SIZE, game->pacman->y * SIZE);
 }
 
 void	ft_draw_pacman_left(t_game *game)

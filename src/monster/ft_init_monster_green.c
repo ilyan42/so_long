@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 16:14:40 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/26 13:27:57 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/26 17:35:13 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,24 @@ void	ft_new_position_monster_green(int x, int y, t_game *game)
 {
 	game->monster_green->x = x;
 	game->monster_green->y = y;
+}
+
+int	ft_monster_green_is_present(t_game *game)
+{
+	int	x;
+	int	y;
+
+	y = 0;
+	while (game->map[y])
+	{
+		x = 0;
+		while (game->map[y][x])
+		{
+			if (game->map[y][x] == 'G')
+				return (1);
+			x++;
+		}
+		y++;
+	}
+	return (0);
 }

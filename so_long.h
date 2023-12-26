@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:49:36 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/26 15:18:25 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/26 17:31:49 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,6 +134,7 @@ int			close_game(t_game *game);
 void		ft_free_img(t_game *game);
 void		ft_free_splitted_map(char **tab);
 int			is_rectangular(t_game *game);
+void		player_position(int x, int y, t_game *game);
 
 /*******************Monster_Blue*******************/
 
