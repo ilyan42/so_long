@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 17:39:28 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2023/12/26 16:21:43 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/26 17:01:04 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	load_images(t_game *game, int img_size)
 			&img_size, &img_size);
 	game->pacman_img = mlx_xpm_file_to_image(game->mlx, "./img/pacman_right.xpm",
 			&img_size, &img_size);
-	game->pacman_wall = mlx_xpm_file_to_image(game->mlx, "./img/Walll.xpm",
+	game->pacman_wall = mlx_xpm_file_to_image(game->mlx, "./img/wall_pac.xpm",
 			&img_size, &img_size);
 	game->pacman_gnd = mlx_xpm_file_to_image(game->mlx, "./img/ground_pac.xpm",
 			&img_size, &img_size);
@@ -52,9 +52,9 @@ void	load_images(t_game *game, int img_size)
 			"./img/pacman_left.xpm", &img_size, &img_size);
 	game->pacman_down = mlx_xpm_file_to_image(game->mlx,
 			"./img/pacman_down.xpm", &img_size, &img_size);
-	game->pacman_exit_close = mlx_xpm_file_to_image(game->mlx, "./img/exit_pac.xpm",
+	game->pacman_exit_close = mlx_xpm_file_to_image(game->mlx, "./img/exit_cole2.xpm",
 			&img_size, &img_size);
-	game->pacman_exit_open = mlx_xpm_file_to_image(game->mlx, "./img/exit_pac_open.xpm",
+	game->pacman_exit_open = mlx_xpm_file_to_image(game->mlx, "./img/exit_open.xpm",
 			&img_size, &img_size);
 }
 
