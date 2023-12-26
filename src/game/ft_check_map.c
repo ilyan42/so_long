@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 13:23:59 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/26 14:09:37 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/26 14:15:10 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,5 @@ void	ft_check_map(t_game *game)
 		ft_printf("ERROR 3");
 		exit(0);
 	}
-	ft_layout(game);
+	// ft_layout(game);
 }

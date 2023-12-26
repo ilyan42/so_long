@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:49:36 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/26 14:08:35 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/26 14:54:36 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ typedef struct s_game
 	int nb_moves_max;
 	int nb_moves;
 	t_pos *player_position;
+
+	void *home_screen;
 }			t_game;
 
 # define KEY_PRESS 2

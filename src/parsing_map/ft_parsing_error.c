@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 13:34:43 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/26 14:08:24 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/26 14:14:57 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	is_rectangular(t_game *game)
 void	ft_layout(t_game *game)
 {
 	int	y;
-	int	x ;
+	int	x;
 
 	y = -1;
 	while (game->map[++y])
@@ -92,7 +92,9 @@ void	ft_layout(t_game *game)
 				game->pacman_exit_open += 1;
 			if (game->map[y][x] == 'P')
 				player_position(x, y, game);
+			// y++;
 		}
+		// x++;
 	}
 	game->size_x = y;
 	game->size_y = x;
