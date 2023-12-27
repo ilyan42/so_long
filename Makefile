@@ -6,7 +6,7 @@
 #    By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/06 17:49:42 by ilbendib          #+#    #+#              #
-#    Updated: 2023/12/27 11:31:38 by ilbendib         ###   ########.fr        #
+#    Updated: 2023/12/27 18:18:07 by ilbendib         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ _SRCS = 		src/main.c 	src/game/ft_map_init.c\
 						src/parsing_map/ft_parsing_map.c\
 						src/parsing_map/ft_parsing_error.c\
 						src/parsing_map/ft_parsing_error_2.c\
+						src/parsing_map/ft_parsing_error_3.c\
 
 
 SRC_DIR = .

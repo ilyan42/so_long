@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:49:36 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/27 14:05:55 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/27 18:17:21 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,6 +135,7 @@ void		player_position(int x, int y, t_game *game);
 void		check_walls(t_game *map_lay);
 
 void ft_error(char *msg);
+void check_walls2(t_game *game);
 
 /*******************Monster_Blue*******************/
 
