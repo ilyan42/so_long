@@ -6,9 +6,14 @@
 #    By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/06 17:49:42 by ilbendib          #+#    #+#              #
-#    Updated: 2023/12/26 17:31:07 by ilbendib         ###   ########.fr        #
+#    Updated: 2023/12/27 11:31:38 by ilbendib         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+NAME = so_long
+CC = gcc -g3
+CFLAGS = -Wall -Wextra -Werror
+_HEADERS = so_long.h
 
 _SRCS = 		src/main.c 	src/game/ft_map_init.c\
 						src/game/ft_handle_key_press.c\
@@ -36,15 +41,9 @@ SRC_DIR = .
 
 SRCS = $(_SRCS:%=$(SRC_DIR)/%)
 
-_HEADERS = so_long.h
-
 HEADERS_DIR = .
 
 HEADERS = $(_HEADERS:%=$(HEADERS_DIR)/%)
-
-CC = gcc
-
-CFLAGS = -g3 -Wall -Wextra -Werror
 
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Linux)
@@ -63,8 +62,6 @@ ARFLAGS = rcs
 
 OBJS = $(SRCS:.c=.o)
 
-NAME = so_long
-
 all: $(NAME)
 
 %.o: %.c $(HEADERS)
@@ -79,6 +76,7 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
+	$(MAKE) fclean -C ./LIBFT
 
 re: fclean all
 

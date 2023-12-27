@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:49:36 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/26 17:31:49 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/27 14:05:55 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,11 @@ typedef struct s_game
 	int		map_player;
 	int		map_colect;
 	int		map_exit;
-
 	char	**map_dup;
-	int collect;
-	int nb_moves_max;
-	int nb_moves;
-	t_pos *player_position;
-
-	void *home_screen;
+	int		collect;
+	int		nb_moves_max;
+	int		nb_moves;
+	t_pos	*player_position;
 }			t_game;
 
 # define KEY_PRESS 2
@@ -135,6 +132,9 @@ void		ft_free_img(t_game *game);
 void		ft_free_splitted_map(char **tab);
 int			is_rectangular(t_game *game);
 void		player_position(int x, int y, t_game *game);
+void		check_walls(t_game *map_lay);
+
+void ft_error(char *msg);
 
 /*******************Monster_Blue*******************/
 
