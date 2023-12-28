@@ -6,7 +6,7 @@
 #    By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/06 17:49:42 by ilbendib          #+#    #+#              #
-#    Updated: 2023/12/27 18:18:07 by ilbendib         ###   ########.fr        #
+#    Updated: 2023/12/28 13:57:15 by ilbendib         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ _SRCS = 		src/main.c 	src/game/ft_map_init.c\
 						src/game/ft_put_map.c\
 						src/game/ft_draw_monster.c\
 						src/game/ft_check_map.c\
+						src/game/ft_utils.c\
 						src/monster/ft_init_monster_blue.c\
 						src/monster/ft_move_monster_blue.c\
 						src/monster/ft_init_monster_green.c\

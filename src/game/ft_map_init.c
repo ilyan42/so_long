@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 17:39:28 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2023/12/27 14:19:25 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/28 17:14:30 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void	initialize_game(t_game *game)
 	game->map_colect = 0;
 	game->map_exit = 0;
 	game->map_player = 0;
+	game->nbr_score = 0;
 	game->height = game->size_x;
 	game->width = game->size_y;
 }
@@ -97,6 +98,7 @@ int	ft_update(t_game *game)
 		if (ft_monster_red_is_present(game))
 			ft_move_monster_red(game);
 		ft_print_movements(game);
+		ft_print_score(game);
 		count = 0;
 	}
 	return (0);

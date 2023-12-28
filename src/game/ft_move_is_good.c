@@ -6,17 +6,31 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 16:52:38 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2023/12/26 17:37:30 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/28 17:44:55 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
+#include <stdlib.h>
+#include <time.h>
 
 int	nb_colec_is_good(t_game *game)
 {
 	if (game->nbr_colect_in_map == game->nbr_colec)
 		return (1);
 	return (0);
+}
+
+void	ft_printf_win(t_game *game)
+{
+	ft_printf("\n\nYOU WON IN %d MOVEMENT WITH %d SCORED\n\n", game->nbr_move,
+		game->nbr_score);
+}
+
+void	ft_printf_loose(t_game *game)
+{
+	ft_printf("\n\nYOU DEID IN %d MOVEMENT WITH %d SCORED\n\n", game->nbr_move,
+		game->nbr_score);
 }
 
 int	move_is_good(t_game *game, int x, int y)
@@ -26,6 +40,8 @@ int	move_is_good(t_game *game, int x, int y)
 	if (game->map[y][x] == 'C')
 	{
 		game->nbr_colec += 1;
+		srand(time(NULL));
+		game->nbr_score += (rand() % 100) + 1;
 		return (1);
 	}
 	if (game->map[y][x] == '0')
@@ -33,14 +49,14 @@ int	move_is_good(t_game *game, int x, int y)
 	if (game->map[y][x] == 'R' || game->map[y][x] == 'G'
 		|| game->map[y][x] == 'B')
 	{
-		ft_printf("\n\nYOU DEID IN %d MOVEMENT\n\n", game->nbr_move);
+		ft_printf_loose(game);
 		close_game(game);
 	}
 	if (game->map[y][x] == 'E')
 	{
 		if (nb_colec_is_good(game))
 		{
-			ft_printf("\n\nYOU WON IN %d MOVEMENT\n\n", game->nbr_move);
+			ft_printf_win(game);
 			close_game(game);
 		}
 	}

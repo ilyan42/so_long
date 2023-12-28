@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 13:23:59 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/27 14:08:36 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/28 17:52:37 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,28 +71,43 @@ void	ft_check_map_exit(t_game *game)
 
 void	ft_check_map(t_game *game)
 {
+	ft_check_map_player(game);
 	ft_check_map_colec(game);
 	ft_check_map_exit(game);
-	ft_check_map_player(game);
+	if (ft_check_object_in_map(game) == 0)
+	{
+		ft_printf("Error\nError object in map");
+		error_check_map(game);
+	}
 	if (game->map_colect == 0)
 	{
 		ft_printf("ERROR\n 0 collect");
-		exit(0);
+		error_check_map(game);
 	}
 	if (game->map_exit != 1)
 	{
 		ft_printf("ERROR\n 0 or to many exit");
-		exit(0);
+		error_check_map(game);
 	}
 	if (game->map_player != 1)
 	{
 		ft_printf("ERROR\n to many player");
-		exit(0);
+		error_check_map(game);
 	}
 	ft_layout(game);
 }
 
-void ft_error(char *msg)
+void	error_check_map(t_game *game)
 {
-	ft_printf("%s", msg);
+	ft_free_img(game);
+	mlx_clear_window(game->mlx, game->win);
+	mlx_destroy_window(game->mlx, game->win);
+	mlx_destroy_display(game->mlx);
+	free(game->mlx);
+	ft_free_splitted_map(game->map);
+	free(game->pacman);
+	free(game->monster_blue);
+	free(game->monster_red);
+	free(game->monster_green);
+	exit(EXIT_SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:49:36 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/27 18:17:21 by ilbendib         ###   ########.fr       */
+/*   Updated: 2023/12/28 17:33:31 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ typedef struct s_game
 	int		nb_moves_max;
 	int		nb_moves;
 	t_pos	*player_position;
+	int		nbr_score;
+	int		check;
 }			t_game;
 
 # define KEY_PRESS 2
@@ -136,6 +138,10 @@ void		check_walls(t_game *map_lay);
 
 void ft_error(char *msg);
 void check_walls2(t_game *game);
+void ft_print_score(t_game *game);
+void	ft_check_len_last_line(t_game *game);
+int	ft_check_object_in_map(t_game *game);
+void error_check_map(t_game *game);
 
 /*******************Monster_Blue*******************/
 
