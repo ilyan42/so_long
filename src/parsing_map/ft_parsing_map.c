@@ -6,11 +6,11 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 15:28:56 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/26 15:58:18 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/01/02 11:34:12 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../so_long.h"
+#include "../../include/so_long.h"
 
 void	size_map(t_game *game)
 {

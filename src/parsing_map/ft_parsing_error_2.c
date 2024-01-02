@@ -6,11 +6,11 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 17:30:26 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/28 17:53:19 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/01/02 11:34:01 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../so_long.h"
+#include "../../include/so_long.h"
 
 void	player_position(int x, int y, t_game *game)
 {

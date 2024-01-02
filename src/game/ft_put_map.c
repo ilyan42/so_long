@@ -6,11 +6,11 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 19:10:57 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/28 13:56:25 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/01/02 11:33:28 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../so_long.h"
+#include "../../include/so_long.h"
 
 void	ft_init_player(t_game *game)
 {

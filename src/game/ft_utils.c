@@ -6,11 +6,11 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 13:56:41 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/28 17:47:12 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/01/02 11:33:32 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../so_long.h"
+#include "../../include/so_long.h"
 
 void	ft_print_score(t_game *game)
 {
@@ -65,4 +65,17 @@ int	ft_check_object_in_map(t_game *game)
 		y++;
 	}
 	return (1);
+}
+
+void	ft_check_img(t_game *game)
+{
+	if (!game->pacman_img || !game->pacman_colec || !game->pacman_down
+		|| !game->pacman_exit_close || !game->pacman_exit_open
+		|| !game->pacman_gnd || !game->pacman_left || !game->pacman_up
+		|| !game->pacman_wall || !game->monster_blue_img
+		|| !game->monster_green_img || !game->monster_red_img)
+	{
+		ft_printf("Error\nError image generation\n");
+		exit(0);
+	}
 }

@@ -6,11 +6,11 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 19:08:16 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/26 17:05:09 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/01/02 11:33:03 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../so_long.h"
+#include "../../include/so_long.h"
 
 void	print_wall(t_game *game, int x, int y)
 {

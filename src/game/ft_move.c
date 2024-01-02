@@ -6,11 +6,11 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 15:53:09 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/26 17:09:02 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/01/02 11:33:23 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../so_long.h"
+#include "../../include/so_long.h"
 
 void	ft_move_left(t_game *game)
 {

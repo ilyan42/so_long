@@ -6,11 +6,11 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 17:39:28 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2023/12/28 17:14:30 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/01/02 11:33:16 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../so_long.h"
+#include "../../include/so_long.h"
 
 void	initialize_window(t_game *game, int img_size)
 {
@@ -50,6 +50,7 @@ void	load_images(t_game *game, int img_size)
 			"./img/exit_cole2.xpm", &img_size, &img_size);
 	game->pacman_exit_open = mlx_xpm_file_to_image(game->mlx,
 			"./img/exit_open.xpm", &img_size, &img_size);
+	ft_check_img(game);
 }
 
 void	initialize_game(t_game *game)
@@ -67,7 +68,7 @@ void	initialize_game(t_game *game)
 	game->map_colect = 0;
 	game->map_exit = 0;
 	game->map_player = 0;
-	game->nbr_score = 0;
+	game->nbr_score = 650;
 	game->height = game->size_x;
 	game->width = game->size_y;
 }
@@ -100,6 +101,12 @@ int	ft_update(t_game *game)
 		ft_print_movements(game);
 		ft_print_score(game);
 		count = 0;
+		game->nbr_score -= 1;
+		if (game->nbr_score == 0)
+		{
+			ft_printf("YOU LOSE !!\n");
+			close_game(game);
+		}
 	}
 	return (0);
 }

@@ -6,11 +6,11 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 16:27:08 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2023/12/26 16:08:26 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/01/02 11:33:13 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../so_long.h"
+#include "../../include/so_long.h"
 
 int	ft_handle_key_press(int keycode, void *param)
 {

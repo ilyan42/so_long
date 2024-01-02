@@ -6,11 +6,11 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 17:48:40 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/27 14:08:06 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/01/02 11:35:00 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../include/so_long.h"
 
 void	ft_free_img(t_game *game)
 {

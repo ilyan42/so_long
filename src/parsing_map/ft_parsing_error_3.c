@@ -6,11 +6,11 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 18:14:38 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/28 18:04:01 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/01/02 11:34:04 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../so_long.h"
+#include "../../include/so_long.h"
 
 int	is_valid_first_or_last_line(char *line, size_t len)
 {

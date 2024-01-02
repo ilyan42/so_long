@@ -6,11 +6,11 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 13:23:59 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/28 17:52:37 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/01/02 11:32:55 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../so_long.h"
+#include "../../include/so_long.h"
 
 void	ft_check_map_player(t_game *game)
 {

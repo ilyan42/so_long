@@ -6,11 +6,11 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 13:46:24 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/21 15:39:30 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/01/02 11:33:25 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../so_long.h"
+#include "../../include/so_long.h"
 
 void	nb_colect_in_map(t_game *game)
 {

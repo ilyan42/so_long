@@ -6,13 +6,11 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 16:52:38 by ilyanbendib       #+#    #+#             */
-/*   Updated: 2023/12/28 17:44:55 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/01/02 11:33:19 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../so_long.h"
-#include <stdlib.h>
-#include <time.h>
+#include "../../include/so_long.h"
 
 int	nb_colec_is_good(t_game *game)
 {
@@ -40,8 +38,6 @@ int	move_is_good(t_game *game, int x, int y)
 	if (game->map[y][x] == 'C')
 	{
 		game->nbr_colec += 1;
-		srand(time(NULL));
-		game->nbr_score += (rand() % 100) + 1;
 		return (1);
 	}
 	if (game->map[y][x] == '0')

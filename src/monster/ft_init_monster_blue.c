@@ -6,11 +6,11 @@
 /*   By: ilbendib <ilbendib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 13:36:12 by ilbendib          #+#    #+#             */
-/*   Updated: 2023/12/26 17:35:01 by ilbendib         ###   ########.fr       */
+/*   Updated: 2024/01/02 11:33:36 by ilbendib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../so_long.h"
+#include "../../include/so_long.h"
 
 void	ft_draw_monster_blue(t_game *game)
 {
